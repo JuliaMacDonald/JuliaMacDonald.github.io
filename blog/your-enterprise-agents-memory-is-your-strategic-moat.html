@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Enterprise Agent’s Memory Is Your Strategic Moat — Julia MacDonald</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="wordmark" href="../index.html">Julia MacDonald</a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <a class="back-link" href="../blog.html">← Blog</a>
+
+    <div class="article-cover" aria-hidden="true">
+      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img"><defs><linearGradient id="bgD" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2417"/><stop offset="1" stop-color="#6b5518"/></linearGradient></defs><rect width="800" height="300" fill="url(#bgD)"/><g transform="translate(400,150)" stroke="#ffd97a" fill="none"><circle r="130" stroke-width="3" opacity="0.35"/><circle r="95" stroke-width="4" opacity="0.55"/><circle r="62" stroke-width="5" opacity="0.8"/><circle r="30" fill="#ffd97a" stroke="none" opacity="0.95"/><g stroke-width="3" opacity="0.5"><path d="M-170 0 h-90"/><path d="M170 0 h90"/></g></g></svg>
+    </div>
+
+    <h1>Your Enterprise Agent’s Memory Is Your Strategic Moat</h1>
+    <div class="article-meta">
+      <span class="chip">Enterprise AI</span>
+      <span class="chip">Agent Memory</span>
+    </div>
+
+    <div class="post-body">
+      <p>Many enterprises building agents are relying on model providers (e.g OpenAI or Anthropic) for agent memory solutions. That is a big mistake.</p>
+      <p>As your agent scales more of your data will originate <em>in form</em> of agent memory. Over time an increasing % your company&#x27;s operational knowledge will live inside agent memory. If you don&#x27;t design for that you risk losing control over your own data.</p>
+      <p>So what’s the solution?</p>
+      <p>Let’s define memory best practices for enterprise agents:</p>
+      <p><strong>1</strong>. <strong>Build a separate architecture around memory</strong></p>
+      <p>Treat memory as an architecture decision not a software decision. Start by defining a taxonomy that reflects your enterprise memory needs. Sample types:</p>
+      <p><strong>By storage type</strong>:</p>
+      <ul><li>Short-term memory: e.g. session logs &amp; reasoning traces, agent scratchpad (= space where an agent shares interim session results with other agents etc)</li><li>Long-term memory: facts to be retained across interactions (e.g a user tells a food-ordering agent they have a peanut allergy)</li></ul>
+      <p><strong>By user type</strong>:</p>
+      <p>You could have individual memory for your employees, project memory for teams collaborating on a specific project and company-wide memory.</p>
+      <p><strong>By data type</strong>:</p>
+      <p>You could store information as key-value pairs (e.g user preferences stored with the key being the user ID) or store past successful agent trajectories as a &quot;procedure database&quot; etc.</p>
+      <p><strong>2</strong>. <strong>Create a memory management policy</strong></p>
+      <ul><li>What memory data should be retained?</li><li>What memory data should be discarded?</li><li>What memory data should be compressed?</li></ul>
+      <p>This should be defined by subject-matter experts.</p>
+      <p><strong>3</strong>. <strong>Choose the right memory storage solutions</strong></p>
+      <p>Next, match storage solutions to the taxonomy (likely trajectories will be stored differently than free form user q&amp;a text). Design your storage solution to avoid any vendor lock-in to a specific model or agent framework provider.</p>
+      <p><strong>4</strong>. <strong>Plan for accuracy and safety</strong></p>
+      <p>Memory can contain hallucinations just like LLM-generated/curated outputs. Plan for layers of verification (e.g programmatic validators, LLM-judges, human-in-the-loop reviewers).</p>
+      <p>Additionally, your memory architecture should reflect the risk profile of your use case. For example, a B2C medical agent memory storage solution should look very different from that of a B2B sales assistant agent. Your memory system must be built to prevent cache leaks (=when temporarily stored information from one user session accidentally becomes visible to another user). Plus depending on your location, you’ll need to align with relevant regulations (eg. the EU AI Act).</p>
+      <p><strong>5</strong>. <strong>Roles</strong> &amp; <strong>Review Cadence</strong></p>
+      <p>Finally, assign specific roles and responsibilities, establish review cadence and set KPIs to ensure all the above gets implemented.</p>
+    </div>
+
+    <p class="article-foot">Originally shared on <a href="https://www.linkedin.com/in/juliamacd/recent-activity/all/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Julia MacDonald</span>
+      <span class="footer-links">
+        <a href="../blog.html">Blog</a>
+        <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JuliaMacDonald" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

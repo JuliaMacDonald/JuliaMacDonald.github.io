@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 2026 Multimodal Training Data Roadmap — Julia MacDonald</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="wordmark" href="../index.html">Julia MacDonald</a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <a class="back-link" href="../blog.html">← Blog</a>
+
+    <div class="article-cover" aria-hidden="true">
+      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img"><defs><linearGradient id="bgC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d3b4f"/><stop offset="1" stop-color="#177a8a"/></linearGradient></defs><rect width="800" height="300" fill="url(#bgC)"/><g fill="#bdf3ff"></g><g fill="#bdf3ff"><rect x="100" y="-60" width="24" height="120" rx="12" transform="translate(0,150)" opacity="0.5"/><rect x="152" y="-95" width="24" height="190" rx="12" transform="translate(0,150)" opacity="0.8"/><rect x="204" y="-45" width="24" height="90" rx="12" transform="translate(0,150)" opacity="0.6"/><rect x="256" y="-120" width="24" height="240" rx="12" transform="translate(0,150)" opacity="0.95"/><rect x="308" y="-70" width="24" height="140" rx="12" transform="translate(0,150)" opacity="0.7"/><rect x="360" y="-105" width="24" height="210" rx="12" transform="translate(0,150)" opacity="0.9"/><rect x="412" y="-50" width="24" height="100" rx="12" transform="translate(0,150)" opacity="0.6"/><rect x="464" y="-85" width="24" height="170" rx="12" transform="translate(0,150)" opacity="0.8"/><rect x="516" y="-35" width="24" height="70" rx="12" transform="translate(0,150)" opacity="0.5"/><rect x="568" y="-110" width="24" height="220" rx="12" transform="translate(0,150)" opacity="0.9"/><rect x="620" y="-60" width="24" height="120" rx="12" transform="translate(0,150)" opacity="0.65"/><rect x="672" y="-90" width="24" height="180" rx="12" transform="translate(0,150)" opacity="0.8"/></g></svg>
+    </div>
+
+    <h1>The 2026 Multimodal Training Data Roadmap</h1>
+    <div class="article-meta">
+      <span class="chip">Voice</span>
+      <span class="chip">Training Data</span>
+    </div>
+
+    <div class="post-body">
+      <p>Voice is emerging as a key modality in 2026. It is on track to become the default user interface for a large share of agentic use cases from field worker support agents to nursing home agent companions. Here is what I think the multimodal training data roadmap will look like in 2026:</p>
+      <p><strong>Voice</strong>-<strong>Enabled Agentic Task Completion Data</strong></p>
+      <p>Labs will want training data that combines voice inputs with full agent trajectories. This data can range from &quot;simple&quot; cases: voice input + task completion (&quot;Please book me a flight to Toronto and add it to my calendar&quot;) all the way to complex multi-turn speech-to-speech interactions with the agent asking questions along the way.</p>
+      <p><strong>Voice</strong>-<strong>Enabled Agentic Task Completion Data with Intent</strong> / <strong>Prosody Captured</strong></p>
+      <p>Multimodal data has many more “degrees of freedom” compared to text. A user saying “I am ok” to a companion agent in a nursing home can trigger completely different agent behavior depending on how these words are spoken. Training agents on such use cases will require data with prosody, intent and emotion labels.</p>
+      <p><strong>Agents Handling 3</strong>+ <strong>Modalities</strong></p>
+      <p>Consider a field worker looking at a machine they need to repair while wearing a headset and speaking to the agent: &quot;Please tell me what type of break this is.&quot; The data to train such agents will need to align voice commands with visual context.</p>
+      <h2>Multimodal RL Environments</h2>
+      <p>Current RL environments function primarily as text-based digital twins of enterprise software (e.g Salesforce or Zendesk). I believe the next generation of RL environments will be audio-visual sandboxes where agents are required to process spoken or visual input while also interacting with a software interface. For example an agent could be trained to update patient records in an EHR system based on a doctor&#x27;s dictated notes.</p>
+      <p><strong>Embodied AI</strong> / <strong>Robotics</strong> (<strong>emerging</strong>)</p>
+      <p>&quot;Pick up the box on the left&quot; requires training data that maps spoken commands + visual input to physical action sequences. This in turn requires datasets that synchronize sensor readings, audio-visual input and resulting actions to ensure precise physical coordination.</p>
+    </div>
+
+    <p class="article-foot">Originally shared on <a href="https://www.linkedin.com/in/juliamacd/recent-activity/all/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Julia MacDonald</span>
+      <span class="footer-links">
+        <a href="../blog.html">Blog</a>
+        <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JuliaMacDonald" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

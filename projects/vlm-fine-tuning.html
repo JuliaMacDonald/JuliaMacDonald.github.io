@@ -27,49 +27,42 @@
     <div class="article-meta">
       <span class="chip">PyTorch</span>
       <span class="chip">Hugging Face</span>
-      <span class="chip">LoRA / PEFT</span>
+      <span class="chip">LoRA</span>
       <span class="chip">Apple Silicon</span>
       <span class="chip">2026</span>
     </div>
 
     <p class="lead">
-      Can you fine-tune a vision-language model on a MacBook? Yes — and doing it end-to-end
-      yourself teaches you more about how these models work than a dozen blog posts.
+      I spent years running AI data operations, and I kept advising teams on fine-tuning
+      decisions. At some point I decided I should do one end to end myself again, with my own
+      hands, on my own laptop. So I fine-tuned a vision-language model on my MacBook.
     </p>
 
-    <h2>What it is</h2>
+    <h2>The setup</h2>
     <p>
-      A hands-on training project: taking an open vision-language model and teaching it
-      <strong>visual question answering</strong> — show the model an image, ask "what color is
-      the umbrella?", get a grounded answer. The whole workflow lives in a single reproducible
-      notebook that runs locally on Apple Silicon.
+      The task is visual question answering: show the model a photo, ask "what color is the
+      umbrella?", get a grounded answer. I trained LoRA adapters on a slice of VQAv2 (the
+      standard VQA benchmark - real photos with human-written questions and answers) using
+      the Hugging Face Trainer on Apple's MPS backend. LoRA means you only update a tiny
+      fraction of the weights, which is the reason any of this runs on a laptop at all.
+    </p>
+    <div class="flow">VQAv2 slice → preprocess image+question pairs → LoRA fine-tune → compare answers before/after</div>
+    <p>
+      The whole thing lives in one notebook: hardware check, a look at the data, training,
+      and a before/after comparison of the model's answers. Nothing hidden behind a
+      framework.
     </p>
 
-    <h2>What it does</h2>
-    <div class="flow">dataset (VQAv2) → preprocess image+question pairs → LoRA fine-tune → evaluate answers</div>
-    <ul>
-      <li><strong>Dataset</strong> — a curated slice of VQAv2, the standard visual
-          question-answering benchmark: real photos with human-written questions and answers.</li>
-      <li><strong>Parameter-efficient training</strong> — instead of updating billions of
-          weights, LoRA adapters train a tiny fraction of parameters, which is what makes
-          fine-tuning feasible on a laptop GPU (Apple's MPS backend).</li>
-      <li><strong>Full loop</strong> — hardware check, data inspection, training with the
-          Hugging Face Trainer, and side-by-side evaluation of model answers before and after
-          fine-tuning.</li>
-    </ul>
-
-    <h2>Why it matters to my work</h2>
+    <h2>Why bother</h2>
     <p>
-      I spend my days helping teams decide what AI can and can't do for them — including years
-      running AI data operations, where training data quality was the product. Training a
-      model with my own hands, on my own machine, keeps those recommendations honest: I know
-      what a fine-tune costs, what it fixes, and where it quietly fails.
+      Because "you should fine-tune" and "you should fix your data" are very different
+      invoices, and I hand out that advice for a living. Doing the training run myself keeps
+      the advice honest - I know what a fine-tune costs, what it fixes, and where it quietly
+      fails. It's a learning tool for me, not a product. That's the point.
     </p>
 
     <p class="article-foot">
-      Built with PyTorch, Hugging Face Transformers/Datasets, and PEFT on Apple Silicon.
-      Want to compare notes on small-scale fine-tuning?
-      <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">Find me on LinkedIn</a>.
+      PyTorch + Hugging Face Transformers/Datasets + PEFT, on Apple Silicon.
     </p>
   </main>
 

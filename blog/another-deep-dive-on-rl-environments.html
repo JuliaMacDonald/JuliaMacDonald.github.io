@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Another Deep Dive on RL Environments — Julia MacDonald</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="wordmark" href="../index.html">Julia MacDonald</a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <a class="back-link" href="../blog.html">← Blog</a>
+
+    <div class="article-cover" aria-hidden="true">
+      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img"><defs><linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a1d0e"/><stop offset="1" stop-color="#b4531f"/></linearGradient></defs><rect width="800" height="300" fill="url(#bgG)"/><g stroke="#ffe0c2" stroke-width="2" opacity="0.35"><path d="M240 40 v240 M320 40 v240 M400 40 v240 M480 40 v240 M560 40 v240"/><path d="M200 80 h400 M200 160 h400 M200 240 h400"/></g><path d="M280 240 h80 v-80 h160 v-80" stroke="#ffe0c2" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><circle cx="280" cy="240" r="14" fill="#ffe0c2"/><rect x="500" y="60" width="40" height="40" rx="8" fill="#ffd97a"/></svg>
+    </div>
+
+    <h1>Another Deep Dive on RL Environments</h1>
+    <div class="article-meta">
+      <span class="chip">RL Environments</span>
+      <span class="chip">Industry</span>
+    </div>
+
+    <div class="post-body">
+      <p>Dylan Patel and SemiAnalysis recently published an absolutely fascinating article about RL Environments with insights about industry trends and behind-the-scenes info on frontier lab strategies. So of course I had no choice but to make another deep dive on RL environments 😁</p>
+      <p><strong>On the importance of post training</strong>:</p>
+      <p>SemiAnalysis confirms the rumors: OpenAI has been using the same base model, GPT-4o, for all their recent flagship models: o1, o3, and GPT-5 series. This means all performance gains on OpenAI&#x27;s models for the past 18 months are based on post-training alone and especially on scaling up RL.</p>
+      <p><strong>RL Environment demand and pricing</strong>:</p>
+      <p>Per SemiAnalysis the UI Gym RL Environments (so UI replica websites such as a copy of expedia.com) which help train agents on tasks such as booking a trip “often cost about $20,000 per website.” They mention OpenAI has purchased hundreds of such sites for ChatGPT Agent training and development. If anything this shows us the magnitude of the RL environment action. The pricing indicates each website is likely taking vendors somewhere between 100 and 300 engineering hours to build.</p>
+      <p><strong>Synthetic RL Environments</strong>:</p>
+      <p>SemiAnalysis also mentions synthetic RL environments. Moonshot AI built a full agentic RL environment pipeline that automatically generates tool-use training tasks through both synthetic and real-world environments + a &quot;Verifiable Rewards Gym&quot; framework that creates rule-based RL tasks at scale. Nebius released SWE-rebench, a continuously updated software engineering benchmark that mines fresh tasks from live GitHub repos.</p>
+    </div>
+
+    <p class="article-foot">Originally shared on <a href="https://www.linkedin.com/in/juliamacd/recent-activity/all/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Julia MacDonald</span>
+      <span class="footer-links">
+        <a href="../blog.html">Blog</a>
+        <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JuliaMacDonald" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

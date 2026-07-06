@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Fable: The Amazing and The Questionable — Julia MacDonald</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="wordmark" href="../index.html">Julia MacDonald</a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <a class="back-link" href="../blog.html">← Blog</a>
+
+    <div class="article-cover" aria-hidden="true">
+      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img"><defs><linearGradient id="bgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#40121f"/><stop offset="1" stop-color="#8a2b3d"/></linearGradient></defs><rect width="800" height="300" fill="url(#bgH)"/><g transform="translate(400,150)"><path d="M-140 40 Q -70 10 0 40 Q 70 10 140 40 L 140 -50 Q 70 -80 0 -50 Q -70 -80 -140 -50 Z" fill="#ffe3ea" opacity="0.92"/><path d="M0 40 L0 -50" stroke="#8a2b3d" stroke-width="4"/><g fill="#ffd97a"><path d="M0 -95 l10 22 24 3 -17 17 4 24 -21 -11 -21 11 4 -24 -17 -17 24 -3 Z"/></g></g></svg>
+    </div>
+
+    <h1>Claude Fable: The Amazing and The Questionable</h1>
+    <div class="article-meta">
+      <span class="chip">Model Releases</span>
+    </div>
+
+    <div class="post-body">
+      <p>Anthropic&#x27;s Mythos Fable just came out - one of the most important releases of 2026. Let&#x27;s take a look!</p>
+      <p>Fable is simply an amazing model. It&#x27;s already done incredible work for me analyzing and improving an entire codebase in one shot. It can apparently work on a single job for days - Stripe used it to do a 50-million-line Ruby codebase migration in 1 day (which I think is stepping directly into Cognitions&#x27; competitive turf). General benchmarks are showing great numbers as well - way above Opus 4.8 and GPT 5.5.</p>
+      <p>Surprisingly though on Andon Labs&#x27; Vending-Bench Fable earned much less than Opus 4.7 and GPT-5.5. Per Andon Labs “It rationalizes its bad actions and has a weird moral boundary”. Also the incredible cybersecurity capabilities of Fable didn&#x27;t prevent it from being jailbroken by Pliny the Liberator within 1 day :)</p>
+      <p>Most experts agree that Fable is likely to be a very large model. Simon Willison says Fable is possibly “<em>the largest yet from any vendor</em>.” My personal impression is that Fable condenses a lot of knowledge into fewer words which makes it often harder to understand (it has some of the o3 vibes). The model tends to also use much less bulleted formatting.</p>
+      <p>However the most discussed part about Fable so far have been the policy changes around it:</p>
+      <p><strong>1</strong>. <strong>Data retention</strong></p>
+      <p>There is no zero data retention possibility for Fable. Anthropic now requires 30 day data retention and this apparently overrides any prior enterprise agreements. According to Reuters Microsoft already blocked internal employee use of Fable over data concerns.</p>
+      <p><strong>2</strong>. <strong>Silent throttling</strong></p>
+      <p>Fable comes with safeguards against cyber, bio &amp; chemistry requests as well as distillation. Interestingly the later safeguards are silent “<em>Unlike our interventions for cybersecurity</em>, <em>biology and chemistry</em>, <em>and distillation attempts</em>, <em>these safeguards will not be visible to the user</em>. <em>Fable</em> 5 <em>will not fall back to a different model</em>. <em>Instead</em>, <em>the safeguards will limit effectiveness through methods such as prompt modification</em>, <em>steering vectors</em>, <em>or parameter</em>-<em>efficient fine</em>-<em>tuning</em> (<em>PEFT</em>).”</p>
+      <p>This has already created a backlash from the open source research community. Per Nathan Lambert “<em>The duality of these policies is extremely confusing and paints a strong inconsistency that casts doubt over their safety policies</em>.”</p>
+      <p>What have been your experiences with Fable so far?</p>
+    </div>
+
+    <p class="article-foot">Originally shared on <a href="https://www.linkedin.com/in/juliamacd/recent-activity/all/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Julia MacDonald</span>
+      <span class="footer-links">
+        <a href="../blog.html">Blog</a>
+        <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JuliaMacDonald" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

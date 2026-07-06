@@ -28,54 +28,42 @@
       <span class="chip">Next.js</span>
       <span class="chip">TypeScript</span>
       <span class="chip">Supabase</span>
-      <span class="chip">Webhooks</span>
       <span class="chip">2026</span>
     </div>
 
     <p class="lead">
-      A hosted team workspace that turns meeting recordings into living account intelligence —
-      so what was said on a call actually becomes follow-ups, tasks, and an up-to-date brief,
-      instead of evaporating.
+      Every team I've worked with has the same problem: the meeting recorder captures
+      everything, and then nobody does anything with it. This is my fix.
     </p>
-
-    <h2>What it is</h2>
-    <p>
-      Teams that live on back-to-back calls have a familiar problem: the recorder captures
-      everything, and then nothing happens with it. Meeting Brief Hub ingests transcripts from
-      an AI meeting notetaker the moment a call ends, and routes them through a structured
-      workflow:
-    </p>
-    <div class="flow">recording → signed webhook → inbox (human review) → apply → accounts · people · tasks · objections · key terms</div>
 
     <h2>What it does</h2>
-    <ul>
-      <li><strong>Living account briefs</strong> — each account has a single evolving page:
-          deal stage, "what they want," and a timeline of activity.</li>
-      <li><strong>People board</strong> — a drag-and-drop status board of every contact, with
-          next follow-up dates so no relationship goes cold.</li>
-      <li><strong>Inbox with a human gate</strong> — every new transcript arrives as a
-          <em>proposal</em>. A teammate reviews and clicks Apply before anything touches the
-          shared records; the AI never silently edits your CRM data.</li>
-      <li><strong>Objections &amp; key terms</strong> — recurring pushback and deal language
-          get extracted and tracked across meetings, not lost inside individual calls.</li>
-      <li><strong>Manual import</strong> — notes from meetings without a recorder can be
-          pasted into the same pipeline.</li>
-      <li><strong>Optional AI assist</strong> — a server-side "improve with AI" step sharpens
-          summaries on demand, triggered by a person, never automatically.</li>
-    </ul>
-
-    <h2>The design principle</h2>
     <p>
-      Ingestion creates <strong>proposals, not facts</strong>. Automation does the tedious
-      80% — parsing, structuring, drafting — and a human makes the 20% of calls that matter.
-      That single rule is what makes the team trust the system enough to actually run on it.
+      When a call ends, the transcript arrives in a shared inbox via webhook (the app works
+      with an AI meeting notetaker, plus a paste-in option for meetings without one). The app
+      reads the transcript and drafts a proposal: follow-up tasks, updates to the account
+      brief, objections that came up, key deal terms. A teammate reviews the proposal and
+      clicks Apply. Only then does anything get written to the shared records.
+    </p>
+    <div class="flow">call ends → transcript in inbox → drafted proposal → teammate reviews → Apply → accounts · people · tasks</div>
+    <p>
+      Around that inbox there's a small workspace: a drag-and-drop board of every contact
+      with next follow-up dates, one living brief per account (deal stage, what they want,
+      recent activity), and a log of objections and key terms across meetings. There's also
+      an "improve with AI" button for summaries - a person presses it, it never runs on its
+      own.
+    </p>
+
+    <h2>The one rule</h2>
+    <p>
+      The AI drafts, a human applies. I've seen too many "autonomous" CRM updaters quietly
+      rewrite deal notes until nobody trusts the data anymore. So here automation does the
+      tedious 80% (parsing, structuring, drafting) and people keep the judgment calls. That
+      single rule is why the team actually runs on it.
     </p>
 
     <p class="article-foot">
-      Built with Next.js (App Router), TypeScript, Supabase (Postgres + Auth), and
-      signature-verified webhooks, deployed on Vercel. The repository is private (it holds
-      team data) — happy to talk through the build:
-      <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>.
+      Next.js (App Router) + TypeScript + Supabase, signature-verified webhooks, deployed on
+      Vercel. The repo is private - it holds team data.
     </p>
   </main>
 

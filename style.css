@@ -1,0 +1,280 @@
+/* ============================================================
+   Julia MacDonald — personal site
+   Edit the variables below to change the whole color scheme.
+   ============================================================ */
+
+:root {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --ink: #1d1c1a;
+  --ink-soft: #55524c;
+  --line: #e6e1d8;
+  --accent: #0e6e63;
+  --accent-ink: #0a5a51;
+  --badge-bg: #f0ece3;
+  --shadow: 0 1px 2px rgba(29, 28, 26, 0.05), 0 8px 24px -12px rgba(29, 28, 26, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181a;
+    --surface: #1e2124;
+    --ink: #eceae6;
+    --ink-soft: #a8a49c;
+    --line: #2c3033;
+    --accent: #4fc4b4;
+    --accent-ink: #6ed4c6;
+    --badge-bg: #26292c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .wordmark {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+a { color: var(--accent-ink); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.wordmark {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.wordmark:hover { text-decoration: none; }
+
+.nav-links { display: flex; gap: 22px; }
+.nav-links a {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.nav-links a:hover { color: var(--ink); text-decoration: none; }
+
+/* ---------- hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding-top: 88px;
+  padding-bottom: 96px;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-ink);
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  margin-bottom: 20px;
+}
+
+.lede {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.bio {
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+
+.hero-actions { display: flex; gap: 12px; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 500;
+  background: var(--surface);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); box-shadow: var(--shadow); }
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.hero-photo { justify-self: end; }
+.hero-photo img {
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  max-width: 340px;
+  width: 100%;
+}
+
+/* ---------- sections ---------- */
+
+.section { padding-bottom: 96px; }
+
+.section-head { margin-bottom: 36px; }
+
+.section-head h2, .contact h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+  margin-bottom: 8px;
+}
+
+.section-sub { color: var(--ink-soft); }
+
+.section-foot { margin-top: 28px; color: var(--ink-soft); }
+
+/* ---------- project cards ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 22px 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.15s ease;
+}
+.card:hover { transform: translateY(-2px); }
+
+.card h3 { font-size: 1.2rem; }
+.card p { color: var(--ink-soft); font-size: 0.95rem; }
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot.python { background: #3572A5; }
+.dot.typescript { background: #3178C6; }
+.dot.jupyter { background: #DA5B0B; }
+
+.badge {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: var(--ink-soft);
+}
+
+/* ---------- writing / posts ---------- */
+
+.post-list { list-style: none; }
+
+.post-list li { border-bottom: 1px solid var(--line); }
+.post-list li:first-child { border-top: 1px solid var(--line); }
+
+.post-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 4px;
+  color: var(--ink);
+}
+.post-list a:hover { text-decoration: none; background: color-mix(in srgb, var(--surface) 60%, transparent); }
+.post-list a:hover .post-title { color: var(--accent-ink); }
+
+.post-title { font-weight: 500; }
+.post-meta { color: var(--ink-soft); font-size: 0.85rem; white-space: nowrap; }
+
+/* ---------- contact & footer ---------- */
+
+.contact p { max-width: 560px; color: var(--ink-soft); }
+.contact h2 { margin-bottom: 12px; }
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links { display: flex; gap: 18px; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+  .hero-photo { justify-self: start; order: -1; }
+  .hero-photo img { max-width: 220px; }
+  .nav-links { gap: 14px; }
+  .section { padding-bottom: 64px; }
+  .site-footer .container { flex-direction: column; gap: 10px; }
+}

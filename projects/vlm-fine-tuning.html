@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VLM Fine-Tuning Lab — Julia MacDonald</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="wordmark" href="../index.html">Julia MacDonald</a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <a class="back-link" href="../index.html#projects">← All projects</a>
+
+    <h1>VLM Fine-Tuning Lab</h1>
+    <div class="article-meta">
+      <span class="chip">PyTorch</span>
+      <span class="chip">Hugging Face</span>
+      <span class="chip">LoRA / PEFT</span>
+      <span class="chip">Apple Silicon</span>
+      <span class="chip">2026</span>
+    </div>
+
+    <p class="lead">
+      Can you fine-tune a vision-language model on a MacBook? Yes — and doing it end-to-end
+      yourself teaches you more about how these models work than a dozen blog posts.
+    </p>
+
+    <h2>What it is</h2>
+    <p>
+      A hands-on training project: taking an open vision-language model and teaching it
+      <strong>visual question answering</strong> — show the model an image, ask "what color is
+      the umbrella?", get a grounded answer. The whole workflow lives in a single reproducible
+      notebook that runs locally on Apple Silicon.
+    </p>
+
+    <h2>What it does</h2>
+    <div class="flow">dataset (VQAv2) → preprocess image+question pairs → LoRA fine-tune → evaluate answers</div>
+    <ul>
+      <li><strong>Dataset</strong> — a curated slice of VQAv2, the standard visual
+          question-answering benchmark: real photos with human-written questions and answers.</li>
+      <li><strong>Parameter-efficient training</strong> — instead of updating billions of
+          weights, LoRA adapters train a tiny fraction of parameters, which is what makes
+          fine-tuning feasible on a laptop GPU (Apple's MPS backend).</li>
+      <li><strong>Full loop</strong> — hardware check, data inspection, training with the
+          Hugging Face Trainer, and side-by-side evaluation of model answers before and after
+          fine-tuning.</li>
+    </ul>
+
+    <h2>Why it matters to my work</h2>
+    <p>
+      I spend my days helping teams decide what AI can and can't do for them — including years
+      running AI data operations, where training data quality was the product. Training a
+      model with my own hands, on my own machine, keeps those recommendations honest: I know
+      what a fine-tune costs, what it fixes, and where it quietly fails.
+    </p>
+
+    <p class="article-foot">
+      Built with PyTorch, Hugging Face Transformers/Datasets, and PEFT on Apple Silicon.
+      Want to compare notes on small-scale fine-tuning?
+      <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">Find me on LinkedIn</a>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Julia MacDonald</span>
+      <span class="footer-links">
+        <a href="../blog.html">Blog</a>
+        <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JuliaMacDonald" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

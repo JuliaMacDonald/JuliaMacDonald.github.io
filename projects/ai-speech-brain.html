@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Speech Brain — Julia MacDonald</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="wordmark" href="../index.html">Julia MacDonald</a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <a class="back-link" href="../index.html#projects">← All projects</a>
+
+    <h1>AI Speech Brain</h1>
+    <div class="article-meta">
+      <span class="chip">Python</span>
+      <span class="chip">Next.js + TypeScript</span>
+      <span class="chip">Claude &amp; GPT</span>
+      <span class="chip">Obsidian</span>
+      <span class="chip">2026 · Active</span>
+    </div>
+
+    <p class="lead">
+      A personal AI research brain I built for speech prep — it reads the firehose of AI
+      research so I don't have to, and it learns my taste with every decision I make.
+    </p>
+
+    <h2>What it is</h2>
+    <p>
+      When I prepare talks — currently centered on the state of human data in AI — the raw
+      material is scattered across YouTube talks, newsletters, papers, and long seed documents.
+      AI Speech Brain is a pipeline that ingests all of those sources and distills them into
+      <strong>atomic "nuggets"</strong>: single, self-contained insights that are actually
+      usable on stage.
+    </p>
+
+    <h2>How it works</h2>
+    <div class="flow">sources → transcripts → nugget extraction → taste judging → top picks → my review → better judging</div>
+    <ul>
+      <li><strong>Ingestion</strong> — a watchlist of YouTube channels, RSS newsletters, and
+          dropped-in documents is fetched daily, fully automatically.</li>
+      <li><strong>Extraction</strong> — Claude turns each transcript into candidate nuggets.</li>
+      <li><strong>Cross-vendor judging</strong> — a second model from a different provider
+          (GPT) independently scores each nugget against my taste profile, so neither
+          vendor's blind spots go unchecked.</li>
+      <li><strong>Review</strong> — I review the top-ranked cards one at a time in a
+          keyboard-driven web app (approve, reject-with-reason, edit, skip), or directly
+          inside my Obsidian vault.</li>
+      <li><strong>The loop</strong> — every approve/reject decision is synced back into the
+          taste set, so tomorrow's judging is sharper than today's.</li>
+    </ul>
+
+    <h2>Why I like this design</h2>
+    <p>
+      It runs itself. A scheduled cloud job and a local daily job split the work between them,
+      and the whole system converges on my judgment instead of a generic notion of "important."
+      Three different surfaces — web app, terminal, Obsidian — all read and write the same
+      data, so I can review from wherever I already am.
+    </p>
+
+    <p class="article-foot">
+      Built with Python, Next.js 14, TypeScript, Supabase, and the Claude and OpenAI APIs.
+      The repository is private (it contains my personal research material) — happy to talk
+      through the architecture: <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Julia MacDonald</span>
+      <span class="footer-links">
+        <a href="../blog.html">Blog</a>
+        <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JuliaMacDonald" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

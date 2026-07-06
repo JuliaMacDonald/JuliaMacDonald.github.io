@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Brief Hub — Julia MacDonald</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="wordmark" href="../index.html">Julia MacDonald</a>
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <a class="back-link" href="../index.html#projects">← All projects</a>
+
+    <h1>Meeting Brief Hub</h1>
+    <div class="article-meta">
+      <span class="chip">Next.js</span>
+      <span class="chip">TypeScript</span>
+      <span class="chip">Supabase</span>
+      <span class="chip">Webhooks</span>
+      <span class="chip">2026</span>
+    </div>
+
+    <p class="lead">
+      A hosted team workspace that turns meeting recordings into living account intelligence —
+      so what was said on a call actually becomes follow-ups, tasks, and an up-to-date brief,
+      instead of evaporating.
+    </p>
+
+    <h2>What it is</h2>
+    <p>
+      Teams that live on back-to-back calls have a familiar problem: the recorder captures
+      everything, and then nothing happens with it. Meeting Brief Hub ingests transcripts from
+      an AI meeting notetaker the moment a call ends, and routes them through a structured
+      workflow:
+    </p>
+    <div class="flow">recording → signed webhook → inbox (human review) → apply → accounts · people · tasks · objections · key terms</div>
+
+    <h2>What it does</h2>
+    <ul>
+      <li><strong>Living account briefs</strong> — each account has a single evolving page:
+          deal stage, "what they want," and a timeline of activity.</li>
+      <li><strong>People board</strong> — a drag-and-drop status board of every contact, with
+          next follow-up dates so no relationship goes cold.</li>
+      <li><strong>Inbox with a human gate</strong> — every new transcript arrives as a
+          <em>proposal</em>. A teammate reviews and clicks Apply before anything touches the
+          shared records; the AI never silently edits your CRM data.</li>
+      <li><strong>Objections &amp; key terms</strong> — recurring pushback and deal language
+          get extracted and tracked across meetings, not lost inside individual calls.</li>
+      <li><strong>Manual import</strong> — notes from meetings without a recorder can be
+          pasted into the same pipeline.</li>
+      <li><strong>Optional AI assist</strong> — a server-side "improve with AI" step sharpens
+          summaries on demand, triggered by a person, never automatically.</li>
+    </ul>
+
+    <h2>The design principle</h2>
+    <p>
+      Ingestion creates <strong>proposals, not facts</strong>. Automation does the tedious
+      80% — parsing, structuring, drafting — and a human makes the 20% of calls that matter.
+      That single rule is what makes the team trust the system enough to actually run on it.
+    </p>
+
+    <p class="article-foot">
+      Built with Next.js (App Router), TypeScript, Supabase (Postgres + Auth), and
+      signature-verified webhooks, deployed on Vercel. The repository is private (it holds
+      team data) — happy to talk through the build:
+      <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Julia MacDonald</span>
+      <span class="footer-links">
+        <a href="../blog.html">Blog</a>
+        <a href="https://www.linkedin.com/in/juliamacd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JuliaMacDonald" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

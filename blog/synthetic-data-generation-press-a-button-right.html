@@ -34,13 +34,13 @@
 
     <div class="post-body">
       <p>Let&#x27;s take a look at a state-of-the-art synthetic pipeline based on Moonshot AI building agentic behavior in Kimi K2</p>
-      <p><strong>Step 1</strong>: <strong>Tool spec generation</strong></p>
+      <h2>Step 1: Tool spec generation</h2>
       <p>“We construct a tool repository. First, we directly fetch 3000+ real MCP tools from GitHub repositories. Second, we evolve [create] synthetic tools [..]: we begin with key categories (e.g., financial trading [..]), then we evolve specific application domains within each category. Specialized tools are then synthesized for each domain. This evolution process produces over 20,000 synthetic tools.”</p>
-      <p><strong>Step 2</strong>: <strong>Agent profile generation</strong></p>
+      <h2>Step 2: Agent profile generation</h2>
       <p>“We generate thousands of distinct agents by synthesizing various system prompts and equipping them with different combinations of tools from our repository.”</p>
-      <p><strong>Step 3</strong>: <strong>Rubric</strong>-<strong>based task generation</strong></p>
+      <h2>Step 3: Rubric-based task generation</h2>
       <p>“For each agent configuration, we generate tasks that range from simple to complex operations. Each task is paired with an explicit rubric that specifies success criteria, expected tool-use patterns, and evaluation checkpoints.“</p>
-      <p><strong>Step 4</strong>: <strong>User simulation</strong></p>
+      <h2>Step 4: User simulation</h2>
       <p>Further, the Moonshot AI team creates “LLM-generated user personas with distinct communication styles and preferences.”</p>
       <p><strong>Step 5</strong>: A tool simulator executes multi-turn user &lt;&gt; agent interactions and tool calls + provides realistic feedback. Plus “we complement our simulated environments with real execution sandboxes for scenarios where authenticity is crucial, particularly in coding and software engineering tasks.“</p>
       <p><strong>Step 6</strong>: An LLM-Judge evaluates each trajectory against the task rubrics</p>

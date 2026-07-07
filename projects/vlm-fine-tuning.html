@@ -33,9 +33,9 @@
     </div>
 
     <p class="lead">
-      I spent years running AI data operations, and I kept advising teams on fine-tuning
-      decisions. At some point I decided I should do one end to end myself again, with my own
-      hands, on my own laptop. So I fine-tuned a vision-language model on my MacBook.
+      After years of running AI data operations and advising teams on fine-tuning decisions,
+      I wanted a current, hands-on reference point. So I fine-tuned a vision-language model
+      end to end on my MacBook.
     </p>
 
     <h2>The setup</h2>
@@ -43,8 +43,8 @@
       The task is visual question answering: show the model a photo, ask "what color is the
       umbrella?", get a grounded answer. I trained LoRA adapters on a slice of VQAv2 (the
       standard VQA benchmark - real photos with human-written questions and answers) using
-      the Hugging Face Trainer on Apple's MPS backend. LoRA means you only update a tiny
-      fraction of the weights, which is the reason any of this runs on a laptop at all.
+      the Hugging Face Trainer on Apple's MPS backend. LoRA updates only a small fraction
+      of the weights, which is what makes this feasible on a laptop.
     </p>
     <div class="diagram" role="img" aria-label="Architecture: a VQAv2 dataset slice is preprocessed into image-question pairs, LoRA adapters are fine-tuned on a frozen base model with the Hugging Face Trainer on Apple MPS, then answers are compared before and after.">
       <svg viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg">
@@ -78,27 +78,25 @@
       </svg>
     </div>
     <p>
-      The whole thing lives in one notebook: hardware check, a look at the data, training,
-      and a before/after comparison of the model's answers. Nothing hidden behind a
-      framework.
+      The full workflow is in one notebook: hardware check, dataset inspection, training,
+      and a before/after comparison of the model's answers.
     </p>
 
     <h2>Goals</h2>
     <p>
-      I had three goals here: know first-hand what a small fine-tune costs in time and
-      compute, see where it fails and how, and keep a current reference point for the
-      fine-tune vs better-data conversations I have with teams all the time.
+      Three goals: understand first-hand what a small fine-tune costs in time and compute,
+      see where it fails and how, and keep a current reference point for the fine-tune vs
+      better-data question that comes up constantly in my work with teams.
     </p>
 
     <h2>Stack choices</h2>
     <p>
-      PyTorch with the MPS backend, because the whole point was to run on my own machine -
-      no cloud GPU bill, no queue. Hugging Face Transformers and Datasets because they're
-      the standard, and when something breaks at 11pm you can actually find the answer.
-      PEFT for the LoRA part: the base model stays frozen and only small adapter matrices
-      train, which is what makes the memory footprint fit a laptop. And a notebook instead
-      of scripts, on purpose - this is a lab, and I want every step visible in one place:
-      the data, the training curve, the answers before and after.
+      PyTorch with the MPS backend to run everything locally on Apple Silicon - no cloud GPU
+      needed. Hugging Face Transformers and Datasets because they are the industry standard
+      with the best documentation. PEFT for LoRA: the base model stays frozen and only small
+      adapter matrices are trained, which keeps the memory footprint within laptop range.
+      Everything is structured as a notebook so each step stays visible and reproducible -
+      the data, the training run, and the model's answers before and after.
     </p>
   </main>
 

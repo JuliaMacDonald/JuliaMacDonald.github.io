@@ -76,7 +76,7 @@
         <!-- improve with AI -->
         <rect class="box" x="252" y="170" width="168" height="52" rx="10"/>
         <text class="lbl" x="336" y="191" text-anchor="middle">"Improve with AI"</text>
-        <text class="sub" x="336" y="208" text-anchor="middle">a person presses it</text>
+        <text class="sub" x="336" y="208" text-anchor="middle">manual trigger only</text>
 
         <!-- human gate -->
         <rect class="box-accent" x="500" y="40" width="160" height="56" rx="10"/>
@@ -109,13 +109,12 @@
     <h2>Stack choices</h2>
     <p>
       Next.js (App Router) + TypeScript, Supabase for Postgres and auth, deployed on Vercel.
-      Supabase because the whole data model is relational - accounts, people, meetings,
-      tasks - and row-level security comes with it instead of being something you build.
-      The webhook endpoint verifies signatures on every payload: transcripts are sensitive,
-      and an open endpoint that writes toward your CRM is asking for trouble. The AI-assist
-      step runs server-side only, so no key ever reaches the browser. And Vercel simply
-      because a webhook needs a stable public URL, and I didn't want to babysit a server
-      for that.
+      Supabase because the data model is relational - accounts, people, meetings, tasks -
+      and row-level security is built in. The webhook endpoint verifies signatures on every
+      payload: transcripts are sensitive data, and an unauthenticated endpoint that can
+      write to your account records is an obvious attack surface. The AI-assist step runs
+      server-side only, so no API key reaches the browser. Vercel because the webhook needs
+      a stable public HTTPS URL.
     </p>
   </main>
 

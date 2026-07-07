@@ -43,8 +43,8 @@
       Every day a pipeline pulls whatever is new from my watchlist (YouTube channels, RSS
       newsletters, documents I drop in). One model extracts candidate "nuggets" - single,
       self-contained insights. A second model from a different vendor scores each nugget
-      against my taste profile. Two vendors on purpose: I don't want to inherit any one
-      lab's blind spots.
+      against my taste profile - using two vendors keeps any one lab's biases from
+      dominating the ranking.
     </p>
     <div class="diagram" role="img" aria-label="Architecture: sources flow through a daily pipeline into nugget extraction, judging against my taste profile, and a top-8 review queue; my decisions feed the taste profile back into the judge.">
       <svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@
         <!-- pipeline -->
         <rect class="box" x="200" y="80" width="116" height="58" rx="10"/>
         <text class="lbl" x="258" y="104" text-anchor="middle">Daily pipeline</text>
-        <text class="sub" x="258" y="122" text-anchor="middle">runs itself</text>
+        <text class="sub" x="258" y="122" text-anchor="middle">automated</text>
 
         <!-- extract -->
         <rect class="box" x="356" y="80" width="150" height="58" rx="10"/>
@@ -78,7 +78,7 @@
         <!-- judge -->
         <rect class="box" x="546" y="80" width="194" height="58" rx="10"/>
         <text class="lbl" x="643" y="104" text-anchor="middle">Judge vs my taste</text>
-        <text class="sub" x="643" y="122" text-anchor="middle">GPT · different vendor on purpose</text>
+        <text class="sub" x="643" y="122" text-anchor="middle">GPT · second vendor</text>
 
         <!-- top 8 -->
         <rect class="box" x="586" y="208" width="114" height="48" rx="10"/>
@@ -88,12 +88,12 @@
         <!-- review (the human) -->
         <rect class="box-accent" x="356" y="208" width="164" height="48" rx="10"/>
         <text class="lbl" x="438" y="228" text-anchor="middle">I review: 👍 / 👎</text>
-        <text class="sub" x="438" y="245" text-anchor="middle">~10 min with coffee</text>
+        <text class="sub" x="438" y="245" text-anchor="middle">approve · reject · edit</text>
 
         <!-- taste profile -->
         <rect class="box" x="80" y="208" width="200" height="48" rx="10"/>
         <text class="lbl" x="180" y="228" text-anchor="middle">Taste profile</text>
-        <text class="sub" x="180" y="245" text-anchor="middle">my decisions, accumulated</text>
+        <text class="sub" x="180" y="245" text-anchor="middle">decisions + reasons</text>
 
         <!-- wires -->
         <path class="wire" d="M152 49 C 178 49 172 109 196 109" marker-end="url(#ah)"/>
@@ -105,7 +105,7 @@
         <path class="wire" d="M586 232 H 524" marker-end="url(#ah)"/>
         <path class="wire" d="M356 232 H 284" marker-end="url(#ah)"/>
         <path class="wire-accent" d="M180 208 C 180 160 380 178 560 142" marker-end="url(#ahA)"/>
-        <text class="note" x="400" y="152" text-anchor="middle">teaches tomorrow's judging</text>
+        <text class="note" x="400" y="152" text-anchor="middle">updates ranking criteria daily</text>
       </svg>
     </div>
     <p>
@@ -126,8 +126,8 @@
     <h2>Stack choices</h2>
     <p>
       Python for the pipeline, Next.js 14 + TypeScript for the review app, Supabase for
-      storage, Vercel for hosting. Claude does extraction and GPT does judging - splitting
-      the two jobs across vendors is a design decision, not an accident of API keys. The
+      storage, Vercel for hosting. Claude does extraction and GPT does judging, so each
+      model's output gets checked by a model it wasn't trained with. The
       daily run is split too: a scheduled cloud job handles decision syncing and feeds, and a
       local job on my Mac covers what doesn't work from datacenter IPs (YouTube transcripts,
       mostly).

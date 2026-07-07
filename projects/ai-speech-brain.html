@@ -32,9 +32,10 @@
     </div>
 
     <p class="lead">
-      I give talks on the state of human data in AI. The source material for a good talk is
-      scattered across hours of YouTube panels, a pile of newsletters and papers I bookmark
-      and rarely reopen. So I built a tool that does the collecting for me.
+      I give talks on the state of human data in AI. Keeping them current means tracking a
+      constant stream of research talks, newsletters, and papers - far more than any one
+      person can actually watch and read. So I built a system that ingests all of it and
+      learns what I consider signal.
     </p>
 
     <h2>How it works</h2>
@@ -115,16 +116,11 @@
 
     <h2>The self-improvement loop</h2>
     <p>
-      This is the part I care most about. Reviews here aren't just filtering - they're
-      training signal. Every approve and reject (with its reason) gets synced into the taste
-      set, and the judge re-reads that set on the next run. So each daily batch is judged
-      against a slightly better model of what I consider valuable. The system also evals
-      itself against my past decisions, which tells me whether it's actually converging or
-      just churning.
-    </p>
-    <p>
-      In other words: the pipeline improves because I use it. Skip a week and it doesn't get
-      worse - it just stops getting better.
+      Reviews aren't just filtering - they're training signal. Every approve and reject
+      (with its reason) gets added to a taste set. The judge reads that set on every run,
+      so its ranking criteria get updated daily based on my latest decisions. The system
+      also runs evals against my past decisions, which measures whether its judging accuracy
+      is actually improving over time.
     </p>
 
     <h2>Stack choices</h2>
@@ -134,9 +130,7 @@
       the two jobs across vendors is a design decision, not an accident of API keys. The
       daily run is split too: a scheduled cloud job handles decision syncing and feeds, and a
       local job on my Mac covers what doesn't work from datacenter IPs (YouTube transcripts,
-      mostly). Everywhere else the choices are deliberately boring - the interesting part of
-      this system is the feedback loop, so everything around it should be as unremarkable as
-      possible.
+      mostly).
     </p>
   </main>
 

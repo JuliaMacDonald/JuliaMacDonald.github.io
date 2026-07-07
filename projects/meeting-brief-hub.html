@@ -103,17 +103,16 @@
       own.
     </p>
 
-    <h2>The one rule</h2>
+    <h2>Stack choices</h2>
     <p>
-      The AI drafts, a human applies. I've seen too many "autonomous" CRM updaters quietly
-      rewrite deal notes until nobody trusts the data anymore. So here automation does the
-      tedious 80% (parsing, structuring, drafting) and people keep the judgment calls. That
-      single rule is why the team actually runs on it.
-    </p>
-
-    <p class="article-foot">
-      Next.js (App Router) + TypeScript + Supabase, signature-verified webhooks, deployed on
-      Vercel. The repo is private - it holds team data.
+      Next.js (App Router) + TypeScript, Supabase for Postgres and auth, deployed on Vercel.
+      Supabase because the whole data model is relational - accounts, people, meetings,
+      tasks - and row-level security comes with it instead of being something you build.
+      The webhook endpoint verifies signatures on every payload: transcripts are sensitive,
+      and an open endpoint that writes toward your CRM is asking for trouble. The AI-assist
+      step runs server-side only, so no key ever reaches the browser. And Vercel simply
+      because a webhook needs a stable public URL, and I didn't want to babysit a server
+      for that.
     </p>
   </main>
 

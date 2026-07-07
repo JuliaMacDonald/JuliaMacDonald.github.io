@@ -83,16 +83,15 @@
       framework.
     </p>
 
-    <h2>Why bother</h2>
+    <h2>Stack choices</h2>
     <p>
-      Because "you should fine-tune" and "you should fix your data" are very different
-      invoices, and I hand out that advice for a living. Doing the training run myself keeps
-      the advice honest - I know what a fine-tune costs, what it fixes, and where it quietly
-      fails. It's a learning tool for me, not a product. That's the point.
-    </p>
-
-    <p class="article-foot">
-      PyTorch + Hugging Face Transformers/Datasets + PEFT, on Apple Silicon.
+      PyTorch with the MPS backend, because the whole point was to run on my own machine -
+      no cloud GPU bill, no queue. Hugging Face Transformers and Datasets because they're
+      the standard, and when something breaks at 11pm you can actually find the answer.
+      PEFT for the LoRA part: the base model stays frozen and only small adapter matrices
+      train, which is what makes the memory footprint fit a laptop. And a notebook instead
+      of scripts, on purpose - this is a lab, and I want every step visible in one place:
+      the data, the training curve, the answers before and after.
     </p>
   </main>
 

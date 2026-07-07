@@ -368,6 +368,93 @@ a.card:hover .card-more { color: var(--accent-ink); }
   font-size: 0.95rem;
 }
 
+/* ---------- project cards (terminal-window style) ---------- */
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.proj-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.proj-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.proj-card:hover .proj-title { color: var(--accent-ink); }
+.proj-card:hover .proj-go { color: var(--accent-ink); }
+
+.proj-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--badge-bg);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.proj-dots { display: inline-flex; gap: 5px; flex-shrink: 0; }
+.proj-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.proj-dots i:nth-child(1) { background: #e0685e; }
+.proj-dots i:nth-child(2) { background: #e3b341; }
+.proj-dots i:nth-child(3) { background: #58a65c; }
+
+.proj-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.proj-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.proj-body p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.proj-foot {
+  margin-top: auto;
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+}
+.proj-go { flex-shrink: 0; }
+
 /* ---------- architecture diagrams ---------- */
 
 .diagram {

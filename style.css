@@ -130,7 +130,7 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 28px;
 }
 
-.hero-actions { display: flex; gap: 12px; }
+.hero-actions { display: flex; gap: 12px; margin: 4px 0 24px; }
 
 .btn {
   display: inline-block;

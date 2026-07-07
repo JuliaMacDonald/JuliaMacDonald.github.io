@@ -52,7 +52,68 @@
       against my taste profile. Two vendors on purpose: I don't want to inherit any one
       lab's blind spots.
     </p>
-    <div class="flow">watchlist → transcripts → nugget extraction → taste judging → top 8 cards → my review → sharper judging tomorrow</div>
+    <div class="diagram" role="img" aria-label="Architecture: sources flow through a daily pipeline into nugget extraction, judging against my taste profile, and a top-8 review queue; my decisions feed the taste profile back into the judge.">
+      <svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 Z" class="arrowhead"/>
+          </marker>
+          <marker id="ahA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 Z" class="arrowhead-accent"/>
+          </marker>
+        </defs>
+
+        <!-- sources -->
+        <rect class="box" x="20" y="28" width="132" height="42" rx="10"/>
+        <text class="lbl" x="86" y="54" text-anchor="middle">YouTube talks</text>
+        <rect class="box" x="20" y="88" width="132" height="42" rx="10"/>
+        <text class="lbl" x="86" y="114" text-anchor="middle">Newsletters</text>
+        <rect class="box" x="20" y="148" width="132" height="42" rx="10"/>
+        <text class="lbl" x="86" y="174" text-anchor="middle">Docs I drop in</text>
+
+        <!-- pipeline -->
+        <rect class="box" x="200" y="80" width="116" height="58" rx="10"/>
+        <text class="lbl" x="258" y="104" text-anchor="middle">Daily pipeline</text>
+        <text class="sub" x="258" y="122" text-anchor="middle">runs itself</text>
+
+        <!-- extract -->
+        <rect class="box" x="356" y="80" width="150" height="58" rx="10"/>
+        <text class="lbl" x="431" y="104" text-anchor="middle">Extract nuggets</text>
+        <text class="sub" x="431" y="122" text-anchor="middle">Claude</text>
+
+        <!-- judge -->
+        <rect class="box" x="546" y="80" width="194" height="58" rx="10"/>
+        <text class="lbl" x="643" y="104" text-anchor="middle">Judge vs my taste</text>
+        <text class="sub" x="643" y="122" text-anchor="middle">GPT · different vendor on purpose</text>
+
+        <!-- top 8 -->
+        <rect class="box" x="586" y="208" width="114" height="48" rx="10"/>
+        <text class="lbl" x="643" y="228" text-anchor="middle">Top 8 cards</text>
+        <text class="sub" x="643" y="245" text-anchor="middle">the day's best</text>
+
+        <!-- review (the human) -->
+        <rect class="box-accent" x="356" y="208" width="164" height="48" rx="10"/>
+        <text class="lbl" x="438" y="228" text-anchor="middle">I review: 👍 / 👎</text>
+        <text class="sub" x="438" y="245" text-anchor="middle">~10 min with coffee</text>
+
+        <!-- taste profile -->
+        <rect class="box" x="80" y="208" width="200" height="48" rx="10"/>
+        <text class="lbl" x="180" y="228" text-anchor="middle">Taste profile</text>
+        <text class="sub" x="180" y="245" text-anchor="middle">my decisions, accumulated</text>
+
+        <!-- wires -->
+        <path class="wire" d="M152 49 C 178 49 172 109 196 109" marker-end="url(#ah)"/>
+        <path class="wire" d="M152 109 H 196" marker-end="url(#ah)"/>
+        <path class="wire" d="M152 169 C 178 169 172 109 196 109"/>
+        <path class="wire" d="M316 109 H 352" marker-end="url(#ah)"/>
+        <path class="wire" d="M506 109 H 542" marker-end="url(#ah)"/>
+        <path class="wire" d="M643 138 V 204" marker-end="url(#ah)"/>
+        <path class="wire" d="M586 232 H 524" marker-end="url(#ah)"/>
+        <path class="wire" d="M356 232 H 284" marker-end="url(#ah)"/>
+        <path class="wire-accent" d="M180 208 C 180 160 380 178 560 142" marker-end="url(#ahA)"/>
+        <text class="note" x="400" y="152" text-anchor="middle">teaches tomorrow's judging</text>
+      </svg>
+    </div>
     <p>
       The day's top 8 land as cards in a small web app. I go through them with my coffee -
       thumbs up, thumbs down, edit, skip - about 10 minutes. Each card has a few tools

@@ -44,7 +44,57 @@
       brief, objections that came up, key deal terms. A teammate reviews the proposal and
       clicks Apply. Only then does anything get written to the shared records.
     </p>
-    <div class="flow">call ends → transcript in inbox → drafted proposal → teammate reviews → Apply → accounts · people · tasks</div>
+    <div class="diagram" role="img" aria-label="Architecture: a call transcript arrives via signed webhook into an inbox as a drafted proposal; a teammate reviews and clicks Apply before anything is written to the shared records. Manual notes enter the same inbox; the improve-with-AI step is manually triggered.">
+      <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 Z" class="arrowhead"/>
+          </marker>
+          <marker id="ahA2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 Z" class="arrowhead-accent"/>
+          </marker>
+        </defs>
+
+        <!-- call -->
+        <rect class="box" x="20" y="40" width="140" height="56" rx="10"/>
+        <text class="lbl" x="90" y="63" text-anchor="middle">Call ends</text>
+        <text class="sub" x="90" y="81" text-anchor="middle">AI notetaker recording</text>
+
+        <!-- manual import -->
+        <rect class="box" x="20" y="170" width="140" height="52" rx="10"/>
+        <text class="lbl" x="90" y="191" text-anchor="middle">Paste-in notes</text>
+        <text class="sub" x="90" y="208" text-anchor="middle">meetings w/o recorder</text>
+
+        <!-- inbox -->
+        <rect class="box" x="240" y="40" width="192" height="56" rx="10"/>
+        <text class="lbl" x="336" y="63" text-anchor="middle">Inbox</text>
+        <text class="sub" x="336" y="81" text-anchor="middle">drafted proposal, nothing applied</text>
+
+        <!-- improve with AI -->
+        <rect class="box" x="252" y="170" width="168" height="52" rx="10"/>
+        <text class="lbl" x="336" y="191" text-anchor="middle">"Improve with AI"</text>
+        <text class="sub" x="336" y="208" text-anchor="middle">a person presses it</text>
+
+        <!-- human gate -->
+        <rect class="box-accent" x="500" y="40" width="160" height="56" rx="10"/>
+        <text class="lbl" x="580" y="63" text-anchor="middle">Teammate reviews</text>
+        <text class="sub" x="580" y="81" text-anchor="middle">clicks Apply</text>
+
+        <!-- records -->
+        <rect class="box" x="440" y="180" width="300" height="66" rx="10"/>
+        <text class="lbl" x="590" y="207" text-anchor="middle">Shared records</text>
+        <text class="sub" x="590" y="226" text-anchor="middle">Accounts · People · Tasks · Objections · Key terms</text>
+
+        <!-- wires -->
+        <path class="wire" d="M160 68 H 236" marker-end="url(#ah2)"/>
+        <text class="sub" x="198" y="54" text-anchor="middle">signed webhook</text>
+        <path class="wire" d="M160 196 C 195 196 205 100 238 80"/>
+        <path class="wire" d="M336 170 V 100" marker-end="url(#ah2)" stroke-dasharray="4 4"/>
+        <path class="wire" d="M432 68 H 496" marker-end="url(#ah2)"/>
+        <path class="wire-accent" d="M580 96 V 176" marker-end="url(#ahA2)"/>
+        <text class="note" x="672" y="140" text-anchor="middle">only after Apply</text>
+      </svg>
+    </div>
     <p>
       Around that inbox there's a small workspace: a drag-and-drop board of every contact
       with next follow-up dates, one living brief per account (deal stage, what they want,

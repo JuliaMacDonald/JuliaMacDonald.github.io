@@ -46,7 +46,37 @@
       the Hugging Face Trainer on Apple's MPS backend. LoRA means you only update a tiny
       fraction of the weights, which is the reason any of this runs on a laptop at all.
     </p>
-    <div class="flow">VQAv2 slice → preprocess image+question pairs → LoRA fine-tune → compare answers before/after</div>
+    <div class="diagram" role="img" aria-label="Architecture: a VQAv2 dataset slice is preprocessed into image-question pairs, LoRA adapters are fine-tuned on a frozen base model with the Hugging Face Trainer on Apple MPS, then answers are compared before and after.">
+      <svg viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 Z" class="arrowhead"/>
+          </marker>
+        </defs>
+
+        <rect class="box" x="20" y="60" width="146" height="70" rx="10"/>
+        <text class="lbl" x="93" y="88" text-anchor="middle">VQAv2 slice</text>
+        <text class="sub" x="93" y="106" text-anchor="middle">photos + human Q&amp;A</text>
+
+        <rect class="box" x="206" y="60" width="146" height="70" rx="10"/>
+        <text class="lbl" x="279" y="88" text-anchor="middle">Preprocess</text>
+        <text class="sub" x="279" y="106" text-anchor="middle">image + question pairs</text>
+
+        <rect class="box-accent" x="392" y="60" width="180" height="70" rx="10"/>
+        <text class="lbl" x="482" y="83" text-anchor="middle">Frozen base VLM</text>
+        <text class="lbl" x="482" y="101" text-anchor="middle">+ LoRA adapters</text>
+        <text class="sub" x="482" y="119" text-anchor="middle">only a tiny % of weights train</text>
+
+        <rect class="box" x="612" y="60" width="128" height="70" rx="10"/>
+        <text class="lbl" x="676" y="88" text-anchor="middle">Before / after</text>
+        <text class="sub" x="676" y="106" text-anchor="middle">same questions, compared</text>
+
+        <path class="wire" d="M166 95 H 202" marker-end="url(#ah3)"/>
+        <path class="wire" d="M352 95 H 388" marker-end="url(#ah3)"/>
+        <path class="wire" d="M572 95 H 608" marker-end="url(#ah3)"/>
+        <text class="note" x="482" y="160" text-anchor="middle">HF Trainer on Apple MPS — the whole loop fits on a MacBook</text>
+      </svg>
+    </div>
     <p>
       The whole thing lives in one notebook: hardware check, a look at the data, training,
       and a before/after comparison of the model's answers. Nothing hidden behind a
